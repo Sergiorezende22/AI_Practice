@@ -5,5 +5,5 @@ fringe_size: 492
 max_fringe_size: 24051
 search_depth: 30
 max_search_depth: 30
-running_time: 3.397273540496826 s
-max_ram_usage: 62.544 kb
+running_time: 3.218907356262207 s
+max_ram_usage: 62.892 kb

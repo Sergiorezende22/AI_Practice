@@ -4,6 +4,6 @@ nodes_expanded: 19948
 fringe_size: 8834
 max_fringe_size: 8835
 search_depth: 9964
-max_search_depth: 9963
-running_time: 0.2308039665222168 s
-max_ram_usage: 19.712 kb
+max_search_depth: 9964
+running_time: 0.21599841117858887 s
+max_ram_usage: 19.696 kb

@@ -32,6 +32,10 @@ def bfs(problem:Problem):
             
             # Checa se o filho já foi explorado
             if str(son.state) not in explored:
+                # Gravando a variável de maior profundidade
+                if son.cost > maxdepth:
+                    maxdepth = son.cost
+                    
                 # Se o filho for a resposta, retorna a solução
                 if problem.objective_test(son.state):
                     return {"node": son, "maxdepth": maxdepth, "maxfrontier": maxfrontier, "finalfrontier": len(edge), "scanned": len(explored)}
@@ -39,10 +43,7 @@ def bfs(problem:Problem):
                 # Adiciona o filho a fila e na lista de explorados
                 edge.append(son)
                 explored.add(str(son.state))
-                
-                # Gravando a variável de maior profundidade
-                if son.cost > maxdepth:
-                    maxdepth = son.cost
+
 
         # Gravando a variável de maior fronteira
         if len(edge) > maxfrontier: 
@@ -83,6 +84,10 @@ def dfs(problem:Problem):
             
             # Checa se o filho já foi explorado
             if str(son.state) not in explored:
+                # Gravando a variável de maior profundidade
+                if son.cost > maxdepth:
+                    maxdepth = son.cost
+
                 # Se o filho for a resposta, retorna a solução
                 if problem.objective_test(son.state):
                     return {"node": son, "maxdepth": maxdepth, "maxfrontier": maxfrontier, "finalfrontier": len(edge), "scanned": len(explored)}
@@ -90,10 +95,6 @@ def dfs(problem:Problem):
                 # Adiciona o filho a fila e na lista de explorados
                 edge.append(son)
                 explored.add(str(son.state))
-
-                # Gravando a variável de maior profundidade
-                if son.cost > maxdepth:
-                    maxdepth = son.cost
 
         # Gravando a variável de maior fronteira
         if len(edge) > maxfrontier: 
@@ -142,6 +143,10 @@ def idfs(problem:Problem, minimum, maximum, step):
                 
                 # Checa se o filho já foi explorado
                 if str(son.state) not in explored:
+                    # Gravando a variável de maior profundidade
+                    if son.cost > maxdepth:
+                        maxdepth = son.cost
+
                     # Se o filho for a resposta, retorna a solução
                     if problem.objective_test(son.state):
                         return {"node": son, "maxdepth": maxdepth, "maxfrontier": maxfrontier, "finalfrontier": len(edge), "scanned": len(explored)}
@@ -150,9 +155,6 @@ def idfs(problem:Problem, minimum, maximum, step):
                     edge.append(son)
                     explored.add(str(son.state))
 
-                    # Gravando a variável de maior profundidade
-                    if son.cost > maxdepth:
-                        maxdepth = son.cost
 
             # Gravando a variável de maior fronteira
             if len(edge) > maxfrontier: 
