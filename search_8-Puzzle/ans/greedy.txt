@@ -1,0 +1,7 @@
+path_to_goal: Path was not found
+nodes_expanded: 901
+fringe_size: 0
+max_fringe_size: 1
+max_search_depth: 900
+running_time: 0.09627437591552734 s
+max_ram_usage: 9.588 kb

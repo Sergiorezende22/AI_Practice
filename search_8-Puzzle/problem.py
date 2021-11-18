@@ -1,17 +1,20 @@
 class Node:
-    def __init__(self, state, cost, move = "", parent= None) :
+    def __init__(self, state, cost, depth, move = "", parent= None) :
         self.parent = parent
         self.state = state
         self.move = move
         self.cost = cost
+        self.depth = depth
+
+    def __lt__(self, other):
+        return self.cost < other.cost
 
 class Problem:
     def __init__(self, size, initial_state, goal):
         self.initial_state = initial_state
         self.goal = goal
         self.size = size
-    
-    
+
     # Diz se o estado atual chegou ao objetivo.
     def objective_test(self, state):
         return state == self.goal
@@ -24,8 +27,7 @@ class Problem:
     def get_y(self, index):
         return index // self.size
 
-    
-    
+
     # Pega aa coordenadas x e y a partir de um index do vetor
     def get_coords(self, index):
         return self.get_x(index), self.get_y(index)
